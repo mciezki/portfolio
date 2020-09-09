@@ -18,13 +18,13 @@ header div.textcontent {
 header div.textcontent h1 {
     margin-bottom: 3vh;
     font-size: 4.5rem;
-    color: #aaa;
+    color: #eee;
     text-shadow: 0 0 10px #000;
 }
 
 header div.textcontent h2 {
     font-size: 2.5rem;
-    color: #ccc;
+    color: #ddd;
     text-shadow: 0 0 10px #000;
 }
 
