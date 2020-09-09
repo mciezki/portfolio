@@ -33,3 +33,27 @@ if (window.innerWidth >= 1280) {
         })
     })
 }
+
+//HEADER 
+
+const createSquare = () => {
+    const header = document.querySelector('header');
+    const square = document.createElement('div');
+    square.classList.add('flying');
+
+    let size = Math.random() * 30;
+
+    square.style.width = `${10 + size}px`;
+    square.style.height = `${10 + size}px`;
+
+    square.style.top = `${Math.random() * innerHeight}px`;
+    square.style.left = `${Math.random() * innerWidth}px`;
+
+    header.appendChild(square);
+
+    setTimeout(() => {
+        square.remove();
+    }, 5000)
+}
+
+setInterval(createSquare, 200);
