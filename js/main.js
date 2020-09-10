@@ -42,9 +42,9 @@ if (window.innerWidth >= 1280) {
     document.querySelector('body').style.height = '100vh';
     document.querySelector('body').style.overflow = 'hidden';
     buttons.forEach(button => button.addEventListener('click', () => {
-        courtain.classList.toggle('active');
+        courtain.classList.add('active');
         setTimeout(() => {
-            courtain.classList.toggle('active');
+            courtain.classList.remove('active');
         }, 500)
     }))
 }
