@@ -1,5 +1,6 @@
 @import 'nav.css';
 @import 'header.css';
+@import 'courtain.css';
 
 * {
     margin: 0;
@@ -16,3 +17,5 @@ body {
     min-height: 100vh;
     background-color: #222;
 }
+
+/* background-color: #7A5FFA; */

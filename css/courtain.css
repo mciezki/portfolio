@@ -1,0 +1,49 @@
+body .courtaincontainer {
+    display: none;
+}
+
+@media (orientation: landscape) and (min-width: 1280px) {
+
+    body .courtaincontainer {
+        display: block;
+    }
+
+    body .courtaincontainer .courtain {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 100%;
+        transform-origin: bottom left;
+        transform: rotate(-90deg);
+        transition: .5s ease-in-out;
+    }
+
+    body .courtaincontainer .courtain:nth-child(1) {
+        z-index: 10000;
+        background-color: #7A5FFA;
+        transform: rotate(-90deg);
+        transition-delay: .1s;
+    }
+
+    body .courtaincontainer .courtain:nth-child(2) {
+        z-index: 10001;
+        background-color: #222;
+        transform: rotate(-90deg);
+        transition-delay: 0s;
+    }
+
+    body .courtaincontainer.active .courtain:nth-child(1) {
+        z-index: 10000;
+        transform: rotate(0deg);
+        transition-delay: 0s;
+    }
+
+    body .courtaincontainer.active .courtain:nth-child(2) {
+        z-index: 10001;
+        transform: rotate(0deg);
+        transition-delay: .1s;
+    }
+
+}

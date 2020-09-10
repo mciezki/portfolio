@@ -34,6 +34,22 @@ if (window.innerWidth >= 1280) {
     })
 }
 
+
+//COURTAIN
+const courtain = document.querySelector('.courtaincontainer');
+
+if (window.innerWidth >= 1280) {
+    document.querySelector('body').style.height = '100vh';
+    document.querySelector('body').style.overflow = 'hidden';
+    buttons.forEach(button => button.addEventListener('click', () => {
+        courtain.classList.toggle('active');
+        setTimeout(() => {
+            courtain.classList.toggle('active');
+        }, 500)
+    }))
+}
+
+
 //HEADER 
 
 const createSquare = () => {
