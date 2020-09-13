@@ -83,7 +83,7 @@ const displayPanel = (e) => {
         const btnClass = e.target.classList;
         panels.forEach(panel => {
             panel.classList.remove('modeon')
-            if (panel.classList.contains(btnClass)) panel.classList.add('modeon')
+            if (panel.classList.contains(btnClass)) panel.classList.add('modeon');
         })
     }, 500)
 }
