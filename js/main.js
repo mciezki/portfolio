@@ -73,3 +73,19 @@ const createSquare = () => {
 }
 
 setInterval(createSquare, 200);
+
+
+//PANELS DISPLAY
+const panels = document.querySelectorAll('.panel');
+
+const displayPanel = (e) => {
+    setTimeout(() => {
+        const btnClass = e.target.classList;
+        panels.forEach(panel => {
+            panel.classList.remove('modeon')
+            if (panel.classList.contains(btnClass)) panel.classList.add('modeon')
+        })
+    }, 500)
+}
+
+buttons.forEach(button => button.addEventListener('click', displayPanel));

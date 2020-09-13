@@ -1,0 +1,9 @@
+.panel {
+    display: none;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.panel.modeon {
+    display: block;
+}

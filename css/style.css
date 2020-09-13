@@ -1,6 +1,7 @@
 @import 'nav.css';
 @import 'header.css';
 @import 'courtain.css';
+@import 'panels.css';
 
 * {
     margin: 0;
