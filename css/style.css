@@ -1,7 +1,9 @@
-@import 'nav.css';
-@import 'header.css';
 @import 'courtain.css';
 @import 'panels.css';
+@import 'nav.css';
+@import 'header.css';
+@import 'contact.css';
+
 
 * {
     margin: 0;
