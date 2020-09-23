@@ -1,8 +1,15 @@
-//MOBILE NAVIGATION
+//Variables:
 const toggleBtn = document.querySelector('.toggle');
 const nav = document.querySelector('nav');
+const buttons = document.querySelectorAll('nav ul li a');
+const courtain = document.querySelector('.courtaincontainer');
+const panels = document.querySelectorAll('.panel');
 
-toggleBtn.addEventListener('click', function () {
+const allBtns = [toggleBtn, ...buttons];
+
+//MOBILE NAVIGATION
+
+allBtns.forEach(btn => btn.addEventListener('click', function () {
     nav.classList.toggle('active');
     toggleBtn.style.opacity = '0';
     setTimeout(function () {
@@ -10,11 +17,9 @@ toggleBtn.addEventListener('click', function () {
         else toggleBtn.innerHTML = '<i class="fas fa-bars"></i>';
         toggleBtn.style.opacity = '1';
     }, 200);
-})
+}))
 
 //DESKTOP NAVIGATION
-const buttons = document.querySelectorAll('nav ul li a');
-
 if (window.innerWidth >= 1280) {
     buttons.forEach(button => {
         button.addEventListener('click', function (e) {
@@ -36,8 +41,6 @@ if (window.innerWidth >= 1280) {
 
 
 //COURTAIN
-const courtain = document.querySelector('.courtaincontainer');
-
 if (window.innerWidth >= 1280) {
     document.querySelector('body').style.height = '100vh';
     document.querySelector('body').style.overflow = 'hidden';
@@ -51,7 +54,6 @@ if (window.innerWidth >= 1280) {
 
 
 //HEADER 
-
 const createSquare = () => {
     const header = document.querySelector('header');
     const square = document.createElement('div');
@@ -76,16 +78,23 @@ setInterval(createSquare, 200);
 
 
 //PANELS DISPLAY
-const panels = document.querySelectorAll('.panel');
+
+const showAndHide = (btnClass) => {
+    panels.forEach(panel => {
+        panel.classList.remove('modeon');
+        if (panel.classList.contains(btnClass)) panel.classList.add('modeon');
+    })
+}
 
 const displayPanel = (e) => {
-    setTimeout(() => {
-        const btnClass = e.target.classList;
-        panels.forEach(panel => {
-            panel.classList.remove('modeon')
-            if (panel.classList.contains(btnClass)) panel.classList.add('modeon');
-        })
-    }, 500)
+    const btnClass = e.target.classList;
+    if (window.innerWidth >= 1280) {
+        setTimeout(() => showAndHide(btnClass), 500)
+    } else if ((window.innerWidth < 1280)) {
+        nav.classList.remove('active');
+        showAndHide(btnClass);
+    }
 }
+
 
 buttons.forEach(button => button.addEventListener('click', displayPanel));
